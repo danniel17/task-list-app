@@ -1,0 +1,65 @@
+<div  color="primary" class="task-header mat-elevation-z8">
+    <div class="header-title">
+      <h4>Tasks</h4>
+    </div>
+</div>
+
+<div class="task-container">
+  <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Add Task
+        </mat-panel-title>
+      <mat-panel-description>
+        Add here a new Task
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <div class="">
+      
+      <label  for="title"> Title:</label>
+      <br>
+
+      <mat-form-field>
+        <input matInput placeholder="The title of your task"  #title />
+      </mat-form-field>
+      <br>
+      <label for="content"> Description:</label>
+      <mat-form-field class="full-width">
+        <textarea matInput placeholder="The content here" #description ></textarea>
+      </mat-form-field>
+      
+      <mat-action-row>
+        <button mat-raised-button color="primary" (click)="newTask(title.value,description.value)"> Add</button>
+      </mat-action-row>
+    
+    </div>
+    
+    
+  </mat-expansion-panel>
+  <div *ngFor="let task of tasks">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{task.title}}
+        </mat-panel-title>
+      <mat-panel-description>
+        {{task.steps.length}} step(s)
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    
+    <p><b style="font-weight: 200">Description:</b> {{task.description}}</p><br>
+    <div *ngFor="let step of task.steps">
+      <mat-checkbox [(checked)]="step.isDone" >{{step.stepName}}</mat-checkbox>
+    </div>
+    
+    <mat-action-row>
+      <button mat-mini-fab color="primary" (click)="deleteTask(task)">
+        <i class="material-icons">delete</i>
+      </button>
+    </mat-action-row>
+    
+  </mat-expansion-panel>
+  </div>
+</div>
+

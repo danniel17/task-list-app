@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text');
+.task-header {
+  margin: 0 auto;
+  width: 100%;
+  height: 60px;
+  background-color: white;
+  
+}
+.task-header .header-title {
+  display:table;
+  width: auto;
+  height:100%;
+  float:left;
+  padding: 0 10px;
+}
+.task-header .header-title h4 {
+  display:table-cell;
+  vertical-align: middle;
+  font-size: 30px;
+  font-family: 'Libre Barcode 39 Text', cursive;
+  font-weight: 300;
+}
+
+.task-container {
+  margin:10px 60px;
+}
+
+.full-width {
+  width: 100%;
+}
